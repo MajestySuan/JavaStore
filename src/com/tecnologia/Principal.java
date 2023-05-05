@@ -5,9 +5,7 @@
 package com.tecnologia;
 
 import java.awt.Color;
-import static java.awt.Color.red;
 import java.awt.Image;
-import java.awt.LayoutManager;
 import javax.swing.Icon;
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -16,13 +14,15 @@ import javax.swing.ImageIcon;
  *
  * @author Liu
  */
-public class Tecnologia extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame {
     int xMouse, yMouse;
     /**
-     * Creates new form Tecnologia
+     * Creates new form Tecno
      */
-    public Tecnologia() {
+    public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -45,14 +45,21 @@ public class Tecnologia extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        Lista = new javax.swing.JScrollPane();
         Barra_exit = new javax.swing.JPanel();
         Exit = new javax.swing.JPanel();
         ExitTxt = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jButton8 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(820, 500));
         setResizable(false);
 
         BackGround.setBackground(new java.awt.Color(255, 255, 255));
@@ -60,7 +67,7 @@ public class Tecnologia extends javax.swing.JFrame {
         BackGround.setPreferredSize(new java.awt.Dimension(810, 520));
         BackGround.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Banner.setBackground(new java.awt.Color(102, 102, 255));
+        Banner.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
         Banner.setLayout(BannerLayout);
@@ -77,6 +84,7 @@ public class Tecnologia extends javax.swing.JFrame {
 
         Busqueda.setBackground(new java.awt.Color(255, 255, 255));
         Busqueda.setForeground(new java.awt.Color(255, 255, 255));
+        Busqueda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Busqueda.setBackground(new java.awt.Color(255, 255, 255));
         Panel_Busqueda.setForeground(new java.awt.Color(153, 153, 153));
@@ -92,37 +100,13 @@ public class Tecnologia extends javax.swing.JFrame {
                 Panel_BusquedaActionPerformed(evt);
             }
         });
+        Busqueda.add(Panel_Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 6, 174, 43));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Busqueda32.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
         jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Busqueda48.png"))); // NOI18N
-
-        javax.swing.GroupLayout BusquedaLayout = new javax.swing.GroupLayout(Busqueda);
-        Busqueda.setLayout(BusquedaLayout);
-        BusquedaLayout.setHorizontalGroup(
-            BusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BusquedaLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(BusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator2)
-                    .addComponent(Panel_Busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        BusquedaLayout.setVerticalGroup(
-            BusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BusquedaLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addGroup(BusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Panel_Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40))
-        );
-
-        BackGround.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 260, 100));
+        Busqueda.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 6, 53, 52));
+        Busqueda.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 46, 174, 10));
 
         jButton1.setBackground(new java.awt.Color(255, 153, 102));
         jButton1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
@@ -132,26 +116,39 @@ public class Tecnologia extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/basketball48.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        BackGround.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 260, 90));
+        Busqueda.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 260, 90));
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 255));
+        jButton2.setBackground(new java.awt.Color(51, 51, 255));
         jButton2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/secador32.png"))); // NOI18N
         jButton2.setText("ASEO Y LIMPIEZA");
         jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton2.setPreferredSize(new java.awt.Dimension(119, 32));
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/secador48.png"))); // NOI18N
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        BackGround.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 260, 90));
+        Busqueda.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 260, 90));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 102));
         jButton3.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
@@ -159,8 +156,14 @@ public class Tecnologia extends javax.swing.JFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/chef32.png"))); // NOI18N
         jButton3.setText("MERCADO");
         jButton3.setBorder(null);
+        jButton3.setPreferredSize(new java.awt.Dimension(119, 32));
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/chef48.png"))); // NOI18N
-        BackGround.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 260, 90));
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        Busqueda.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 260, 90));
 
         jButton4.setBackground(new java.awt.Color(153, 255, 51));
         jButton4.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
@@ -168,7 +171,11 @@ public class Tecnologia extends javax.swing.JFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/joystick32.png"))); // NOI18N
         jButton4.setText("TECNOLOGIA");
         jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton4.setPreferredSize(new java.awt.Dimension(119, 32));
         jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/joystick32.png"))); // NOI18N
         jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/joystick48.png"))); // NOI18N
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -181,7 +188,9 @@ public class Tecnologia extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        BackGround.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 260, 90));
+        Busqueda.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 260, 90));
+
+        BackGround.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 260, 460));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shoppingadd.png"))); // NOI18N
         jButton6.setContentAreaFilled(false);
@@ -193,13 +202,15 @@ public class Tecnologia extends javax.swing.JFrame {
         });
         BackGround.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, 100, 100));
 
-        Lista.setForeground(new java.awt.Color(255, 255, 255));
-        BackGround.add(Lista, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 530, 320));
-
         Barra_exit.setBackground(new java.awt.Color(255, 255, 255));
         Barra_exit.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 Barra_exitMouseDragged(evt);
+            }
+        });
+        Barra_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Barra_exitMousePressed(evt);
             }
         });
 
@@ -231,7 +242,7 @@ public class Tecnologia extends javax.swing.JFrame {
         Exit.setLayout(ExitLayout);
         ExitLayout.setHorizontalGroup(
             ExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ExitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+            .addComponent(ExitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
         ExitLayout.setVerticalGroup(
             ExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +255,7 @@ public class Tecnologia extends javax.swing.JFrame {
             Barra_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Barra_exitLayout.createSequentialGroup()
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 774, Short.MAX_VALUE))
+                .addGap(0, 770, Short.MAX_VALUE))
         );
         Barra_exitLayout.setVerticalGroup(
             Barra_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,6 +263,107 @@ public class Tecnologia extends javax.swing.JFrame {
         );
 
         BackGround.add(Barra_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 40));
+
+        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButton7.setText("jButton7");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jButton7)
+                .addContainerGap(450, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jButton7)
+                .addContainerGap(234, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButton8.setText("jButton8");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(jButton8)
+                .addContainerGap(336, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jButton8)
+                .addContainerGap(275, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButton9.setText("jButton9");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(342, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(139, 139, 139))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jButton9)
+                .addContainerGap(275, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButton10.setText("jButton10");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(449, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addGap(26, 26, 26))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jButton10)
+                .addContainerGap(283, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel4);
+
+        BackGround.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 560, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,11 +392,11 @@ public class Tecnologia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton2ActionPerformed
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -293,12 +405,11 @@ public class Tecnologia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-       
+        jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void ExitTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
+
     }//GEN-LAST:event_ExitTxtMousePressed
 
     private void Barra_exitMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra_exitMouseDragged
@@ -328,6 +439,23 @@ public class Tecnologia extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Panel_BusquedaActionPerformed
 
+    private void Barra_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra_exitMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();  
+    }//GEN-LAST:event_Barra_exitMousePressed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -345,20 +473,21 @@ public class Tecnologia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tecnologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tecnologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tecnologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tecnologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tecnologia().setVisible(true);
+                new Principal().setVisible(true);
             }
         });
     }
@@ -370,14 +499,22 @@ public class Tecnologia extends javax.swing.JFrame {
     private javax.swing.JPanel Busqueda;
     private javax.swing.JPanel Exit;
     private javax.swing.JLabel ExitTxt;
-    private javax.swing.JScrollPane Lista;
     private javax.swing.JTextField Panel_Busqueda;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,12 +4,14 @@
  */
 package com.tecnologia;
 
+import java.awt.Color;
+
 /**
  *
  * @author Liu
  */
 public class Carrito extends javax.swing.JFrame {
-
+    int xMouse, yMouse;
     /**
      * Creates new form Carrito
      */
@@ -27,26 +29,123 @@ public class Carrito extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Lista_Compras = new javax.swing.JScrollPane();
-        Volver = new javax.swing.JButton();
-        Aceptar_Compra = new javax.swing.JButton();
+        Comprar = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Barra_exit = new javax.swing.JPanel();
+        Exit = new javax.swing.JPanel();
+        ExitTxt = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(398, 327));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(Lista_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 240));
 
-        Volver.setText("Volver");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
+        Comprar.setBackground(new java.awt.Color(51, 51, 255));
+
+        jLabel1.setBackground(new java.awt.Color(122, 122, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("COMPRAR");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
-        Aceptar_Compra.setText("Aceptar");
-        jPanel1.add(Aceptar_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
+        javax.swing.GroupLayout ComprarLayout = new javax.swing.GroupLayout(Comprar);
+        Comprar.setLayout(ComprarLayout);
+        ComprarLayout.setHorizontalGroup(
+            ComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        ComprarLayout.setVerticalGroup(
+            ComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(Comprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 100, 30));
+
+        Barra_exit.setBackground(new java.awt.Color(255, 255, 255));
+        Barra_exit.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                Barra_exitMouseDragged(evt);
+            }
+        });
+        Barra_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Barra_exitMousePressed(evt);
+            }
+        });
+
+        Exit.setBackground(new java.awt.Color(255, 255, 255));
+        Exit.setForeground(new java.awt.Color(255, 255, 255));
+
+        ExitTxt.setBackground(new java.awt.Color(255, 255, 255));
+        ExitTxt.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        ExitTxt.setForeground(new java.awt.Color(0, 0, 0));
+        ExitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ExitTxt.setText("X");
+        ExitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ExitTxtMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExitLayout = new javax.swing.GroupLayout(Exit);
+        Exit.setLayout(ExitLayout);
+        ExitLayout.setHorizontalGroup(
+            ExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ExitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        ExitLayout.setVerticalGroup(
+            ExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ExitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout Barra_exitLayout = new javax.swing.GroupLayout(Barra_exit);
+        Barra_exit.setLayout(Barra_exitLayout);
+        Barra_exitLayout.setHorizontalGroup(
+            Barra_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Barra_exitLayout.createSequentialGroup()
+                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 400, Short.MAX_VALUE))
+        );
+        Barra_exitLayout.setVerticalGroup(
+            Barra_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(Barra_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 40));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 360, 250));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,17 +155,44 @@ public class Carrito extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-       this.setVisible(false);
-       // TODO add your handling code here:
-    }//GEN-LAST:event_VolverActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        User_Info c= new User_Info();
+        c.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void ExitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseClicked
+        this.setVisible(false);
+    }//GEN-LAST:event_ExitTxtMouseClicked
+
+    private void ExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseEntered
+        Exit.setBackground(Color.red);
+    }//GEN-LAST:event_ExitTxtMouseEntered
+
+    private void ExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseExited
+        Exit.setBackground(Color.white);
+    }//GEN-LAST:event_ExitTxtMouseExited
+
+    private void ExitTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMousePressed
+
+    }//GEN-LAST:event_ExitTxtMousePressed
+
+    private void Barra_exitMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra_exitMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse , y - yMouse);
+    }//GEN-LAST:event_Barra_exitMouseDragged
+
+    private void Barra_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra_exitMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();        // TODO add your handling code here:
+    }//GEN-LAST:event_Barra_exitMousePressed
 
     /**
      * @param args the command line arguments
@@ -104,9 +230,13 @@ public class Carrito extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Aceptar_Compra;
-    private javax.swing.JScrollPane Lista_Compras;
-    private javax.swing.JButton Volver;
+    private javax.swing.JPanel Barra_exit;
+    private javax.swing.JPanel Comprar;
+    private javax.swing.JPanel Exit;
+    private javax.swing.JLabel ExitTxt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
