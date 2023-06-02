@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/com/tecnologia/Principal.java</file>
-            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/com/tecnologia/User_Info.java</file>
-            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/com/tecnologia/Alerta_1.java</file>
-            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/com/tecnologia/Carrito.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/modelo/Detalle.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/vista/Principal.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/modelo/Venta.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/modelo/VentaDAO.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/modelo/ClienteDAO.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/modelo/ProductosDAO.java</file>
+            <file>file:/C:/Users/Liu/Documents/NetBeansProjects/JavaStore/src/vista/User_Info.java</file>
         </group>
     </open-files>
 </project-private>
